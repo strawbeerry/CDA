@@ -1,0 +1,10 @@
+library(readxl)
+library(xlsx)
+test <- read_excel("test.xlsx")
+lt1 <- test$L_T1
+disc_lt1 <- cut(as.numeric(lt1), 5, labels=c("1","2","3","4","5"))
+write.xslx(disc_lt1, "xtest.xlsx")
+
+"""this has to be repeated for each of the seven sensors in order to 
+discretize them. The data is then divided into 80-20 for training 
+and test sets and is stored as discretized_sensors4.xlsx Xtest.xlsx"""
